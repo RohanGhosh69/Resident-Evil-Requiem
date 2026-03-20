@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import zombieImg from "./assets/zombieImg.png";
+import zombieImg from "./assets/zombieImg.webp";
 
 const ZombieGames = () => {
   const [kills, setKills] = useState(0);
