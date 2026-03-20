@@ -1,17 +1,17 @@
 import { useRef, useState } from "react";
 import Entry from "./assets/Entry.mp4";
 import { gsap } from "gsap";
-import logo from "./assets/logo.png";
-import bgTrans from "./assets/bgTrans.png";
+import logo from "./assets/logo.webp";
+import bgTrans from "./assets/bgTrans.webp";
 import bg from "./assets/bg.avif";
-import ch from "./assets/ch.png";
+import ch from "./assets/ch.webp";
 import "remixicon/fonts/remixicon.css";
-import PS5_Logo from "./assets/PS5_Logo.png";
+import PS5_Logo from "./assets/PS5_Logo.webp";
 import text_logo1 from "./assets/text_logo1.webp";
-import text_logo2 from "./assets/text_logo2.png";
+import text_logo2 from "./assets/text_logo2.webp";
 import { useGSAP } from "@gsap/react";
-import pic_2 from "./assets/pic_2.png";
-import pic_2logo from "./assets/pic_2logo.png";
+import pic_2 from "./assets/pic_2.webp";
+import pic_2logo from "./assets/pic_2logo.webp";
 import ZombieGames from "./ZombieGames.jsx";
 
 function App() {
@@ -130,6 +130,7 @@ function App() {
             className="w-full h-full object-cover"
             autoPlay
             muted
+            preload="auto"
             onEnded={gsapTransition}
           >
             <source src={Entry} type="video/mp4" />
@@ -181,10 +182,10 @@ function App() {
           {showCnt && (
             <>
               <div
-                className="main w-full rotate-[-10deg] scale-[1.7] bg-black" 
+                className="main w-full rotate-[-10deg] scale-[1.7] bg-black"
                 ref={mainRef}
               >
-                <div className="landing relative w-full h-screen bg-black overflow-hidden">
+                <div className="landing relative w-full h-screen bg-black overflow-hidden min-h-screen flex items-center">
                   <div className="navbar absolute top-0 left-0 z-[50] w-full py-5 px-5">
                     <div className="logo flex gap-3">
                       <div className="lines flex flex-col gap-1">
@@ -199,7 +200,7 @@ function App() {
                       />
                     </div>
                   </div>
-                  <div className="imagesDiv h-screen w-full relative">
+                  <div className="imagesDiv h-full w-full relative items-center">
                     <img
                       className="absolute inset-0 w-full h-screen object-cover bg scale-[1.8] rotate-[-3deg] bgTrans"
                       src={bgTrans}
@@ -268,7 +269,7 @@ function App() {
                     <img
                       src={PS5_Logo}
                       alt="PS5 and XBOX Logo"
-                      className="h-[60px] w-[13%] left-[44%] absolute bottom-[15%] "
+                      className="h-[40px] sm:h-[50px] lg:h-[60px] w-auto absolute left-1/2 -translate-x-1/2 bottom-[10%]"
                       useMap="#logo-map"
                     />
                     <map name="logo-map">
@@ -293,10 +294,10 @@ function App() {
                 </div>
               </div>
               <div className="w-full h-screen bg-black page2 flex items-center justify-center">
-                <div className="cntnr w-full h-[80%] flex text-white">
+                <div className="cntnr w-full h-auto flex flex-col lg:flex-row text-white">
                   <div className="lImg relative w-1/2 h-full">
                     <img
-                      className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[100%] h-auto scale-[0.9] transition-transform duration-600 hover:scale-110"
+                      className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[-10%] w-[100%] h-auto scale-[0.9] transition-transform duration-600 hover:scale-110"
                       src={pic_2}
                       alt="Pic 2"
                       useMap="#ch-2"
@@ -313,7 +314,7 @@ function App() {
                     </map>
                   </div>
                   <div
-                    className="rg w-[40%] h-auto overflow-hidden"
+                    className="rg w-full lg:w-[40%] h-auto"
                     style={{
                       fontFamily: "'Bebas Neue', sans-serif",
                       textTransform: "uppercase",
@@ -357,7 +358,7 @@ function App() {
                     >
                       <button
                         className="flex items-center justify-center
-              px-10 py-6 text-3xl mt-5 border-none outline-none"
+              px-10 py-6 text-3xl mt-5 border-none outline-none w-fit max-w-full"
                         style={{
                           color: hovered ? "#b91c1c" : "white",
                           transition: "all 0.5s ease-in-out",
