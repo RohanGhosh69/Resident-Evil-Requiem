@@ -389,21 +389,21 @@ function App() {
               <div className="w-full h-[100vh] bg-black text-white gameArea relative items-center justify-center">
                 <ZombieGames />
               </div>
-              <div className="bg-red-500 h-screen w-full">
+              <div className="bg-red-500 py-10 w-full">
                 <div className="poster text-center underline">
                   <h1
                     style={{
-                      fontSize: "100px",
                       fontFamily: "Bebas Neue",
                       fontWeight: "bold",
                     }}
+                    className="text-3xl sm:text-5xl lg:text-7xl"
                   >
                     OFFICIAL GAMEPLAY
                   </h1>
                 </div>
                 <div className="videos max-w-[1200px] mx-auto px-4
                                 grid grid-cols-1 sm:grid-cols-2
-                                gap-6 mt-10">
+                                gap-4 sm:gap-6 mt-6 sm:mt-10">
                   <div className={`group w-full aspect-video overflow-hidden rounded-lg relative transition-all duration-300 
                   ${activeVideo && activeVideo!==1 ? "blur-sm scale-95 opacity-60" : ""} hover:scale-105 hover:shadow-[0_0_30px_rgba(255,0,0,0.6)]`}
                   onMouseEnter={()=>setActiveVideo(1)}
