@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import zombieImg from "./assets/zombieImg.webp";
+import zombieImg from "/zombieImg.webp";
 
 const ZombieGames = () => {
   const [kills, setKills] = useState(0);
@@ -120,6 +120,7 @@ const ZombieGames = () => {
 
             <img
               src={zombieImg}
+              loading="lazy"
               onClick={killZombie}
               style={{
                 position: "absolute",
