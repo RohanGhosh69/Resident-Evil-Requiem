@@ -1,17 +1,17 @@
 import { useRef, useState } from "react";
-import Entry from "./assets/Entry.mp4";
+import Entry from "/Entry.mp4";
 import { gsap } from "gsap";
-import logo from "./assets/logo.webp";
-import bgTrans from "./assets/bgTrans.webp";
-import bg from "./assets/bg.avif";
-import ch from "./assets/ch.webp";
+import logo from "/logo.webp";
+import bgTrans from "/bgTrans.webp";
+import bg from "/bg.avif";
+import ch from "/ch.webp";
 import "remixicon/fonts/remixicon.css";
-import PS5_Logo from "./assets/PS5_Logo.webp";
-import text_logo1 from "./assets/text_logo1.webp";
-import text_logo2 from "./assets/text_logo2.webp";
+import PS5_Logo from "/PS5_Logo.webp";
+import text_logo1 from "/text_logo1.webp";
+import text_logo2 from "/text_logo2.webp";
 import { useGSAP } from "@gsap/react";
-import pic_2 from "./assets/pic_2.webp";
-import pic_2logo from "./assets/pic_2logo.webp";
+import pic_2 from "/pic_2.webp";
+import pic_2logo from "/pic_2logo.webp";
 import ZombieGames from "./ZombieGames.jsx";
 
 function App() {
@@ -131,7 +131,7 @@ function App() {
             className="w-full h-full object-cover"
             autoPlay
             muted
-            preload="auto"
+            preload="metadata"
             onEnded={gsapTransition}
           >
             <source src={Entry} type="video/mp4" />
@@ -182,11 +182,13 @@ function App() {
 
           {showCnt && (
             <>
-              <div
-                className="main w-full rotate-[-10deg] scale-[1.7] bg-black"
+          <div className="w-full">
+            <div className="min-h-screen bg-black">
+            <div className="h-screen bg-black">
+              <div className="main w-full h-full rotate-[-10deg] scale-[1.5] origin-center overflow-hidden"
                 ref={mainRef}
               >
-                <div className="landing relative w-full h-screen bg-black overflow-hidden min-h-screen flex items-center">
+                <div className="landing relative w-full h-full overflow-hidden">
                   <div className="navbar absolute top-0 left-0 z-[50] w-full py-5 px-5">
                     <div className="logo flex gap-3">
                       <div className="lines flex flex-col gap-1">
@@ -197,14 +199,16 @@ function App() {
                       <img
                         src={logo}
                         alt="Logo"
+                        loading="lazy"
                         style={{ height: "20px", width: "80px" }}
                       />
                     </div>
                   </div>
                   <div className="imagesDiv h-full w-full relative items-center">
                     <img
-                      className="absolute inset-0 w-full h-screen object-cover bg scale-[1.8] rotate-[-3deg] bgTrans"
+                      className="absolute inset-0 w-full h-full object-cover bg scale-[1.8] rotate-[-3deg] bgTrans"
                       src={bgTrans}
+                      loading="lazy"
                       alt="Background-transparent"
                     />
 
@@ -212,11 +216,13 @@ function App() {
                       <img
                         src={text_logo1}
                         alt="RESIDENT EVIL LOGO-1"
+                        loading="lazy"
                         className="top-[-100px] left-[-200px] z-[10] w-[950px] absolute logo1"
                       />
                       <img
                         src={text_logo2}
                         alt="RESIDENT EVIL LOGO-2"
+                        loading="lazy"
                         className="top-[150px] left-[-50px] z-[10] w-[600px] absolute logo2 rotate-[10deg] scale-[1.7]"
                       />
                     </div>
@@ -225,6 +231,7 @@ function App() {
                       className="absolute bottom-[-200px] left-[130px] z-[20] character scale-[2] rotate-[-10deg]"
                       src={ch}
                       alt="Character"
+                      loading="lazy"
                       UseMap="#ch-map"
                     />
                     <map name="ch-map">
@@ -272,6 +279,7 @@ function App() {
                       alt="PS5 and XBOX Logo"
                       className="h-[40px] sm:h-[50px] lg:h-[60px] w-auto absolute left-1/2 -translate-x-1/2 bottom-[10%]"
                       useMap="#logo-map"
+                      loading="lazy"
                     />
                     <map name="logo-map">
                       <area
@@ -301,6 +309,7 @@ function App() {
                       className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[-10%] w-[100%] h-auto scale-[0.9] transition-transform duration-600 hover:scale-110"
                       src={pic_2}
                       alt="Pic 2"
+                      loading="lazy"
                       useMap="#ch-2"
                     />
                     <map name="ch-2">
@@ -329,6 +338,7 @@ function App() {
                       <img
                         className="w-full h-100% object-cover"
                         src={pic_2logo}
+                        loading="lazy"
                         alt="Pic 2 Logo Text"
                       />
                     </div>
@@ -359,7 +369,7 @@ function App() {
                     >
                       <button
                         className="flex items-center justify-center
-              px-10 py-6 text-3xl mt-5 border-none outline-none w-fit max-w-full"
+                        px-10 py-6 text-3xl mt-5 border-none outline-none w-fit max-w-full"
                         style={{
                           color: hovered ? "#b91c1c" : "white",
                           transition: "all 0.5s ease-in-out",
@@ -400,7 +410,7 @@ function App() {
                   onMouseLeave={()=>setActiveVideo(null)}
                   >
                     <iframe
-                      src="https://www.youtube.com/embed/_YLpaWRjx6c?vq=hd1080&rel=0&modestbranding=1&autoplay=1"
+                      src="https://www.youtube.com/embed/_YLpaWRjx6c?vq=hd1080&rel=0&modestbranding=1&autoplay=1&mute=1"
                       allowFullScreen
                       className="w-full h-full rounded-lg"
                       title="Resident Evil Official Gameplay - 1"
@@ -429,7 +439,7 @@ function App() {
                   onMouseEnter={()=>setActiveVideo(3)}
                   onMouseLeave={()=>setActiveVideo(null)}>
                     <iframe
-                      src="https://www.youtube.com/embed/aCQGltIEOm8?vq=hd1080&loop=1&playlist=aCQGltIEOm8&modestbranding=1&rel=0&autoplay=1"
+                      src="https://www.youtube.com/embed/aCQGltIEOm8?vq=hd1080&loop=1&playlist=aCQGltIEOm8&modestbranding=1&rel=0&autoplay=1&mute=1"
                       allowFullScreen
                       className="w-full h-full rounded-lg"
                       title="Resident Evil Official Gameplay"
@@ -442,7 +452,7 @@ function App() {
                   onMouseEnter={()=>setActiveVideo(4)}
                   onMouseLeave={()=>setActiveVideo(null)}>
                     <iframe
-                      src="https://www.youtube.com/embed/k8aXqeQs9bE?vq=hd1080&loop=1&playlist=k8aXqeQs9bE&modestbranding=1&rel=0&autoplay=1"
+                      src="https://www.youtube.com/embed/k8aXqeQs9bE?vq=hd1080&loop=1&playlist=k8aXqeQs9bE&modestbranding=1&rel=0&autoplay=1&mute=1"
                       className="w-full h-full rounded-lg"
                       title="Resident Evil Official Gameplay"
                       allow="autoplay"
@@ -451,6 +461,9 @@ function App() {
                   </div>
                 </div>
               </div>
+            </div>
+            </div>
+          </div>
             </>
           )}
         </div>
