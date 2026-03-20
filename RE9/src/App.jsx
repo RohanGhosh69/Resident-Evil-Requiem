@@ -183,8 +183,8 @@ function App() {
           {showCnt && (
             <>
           <div className="w-full">
-            <div className="min-h-screen bg-black">
-            <div className="h-screen bg-black">
+            <div className="min-h-screen bg-red">
+            <div className="h-screen bg-red">
               <div className="main w-full h-full rotate-[-10deg] scale-[1.5] origin-center overflow-hidden"
                 ref={mainRef}
               >
