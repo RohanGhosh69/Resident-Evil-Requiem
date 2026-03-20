@@ -20,6 +20,7 @@ function App() {
   const mainRef = useRef(null);
   const containerRef = useRef(null);
   const [hovered, sethovered] = useState(false);
+  const [activeVideo , setActiveVideo] = useState(null);
 
   const gsapTransition = () => {
     const tl = gsap.timeline();
@@ -390,45 +391,63 @@ function App() {
                     OFFICIAL GAMEPLAY
                   </h1>
                 </div>
-                <div className="videos grid grid-cols-2 place-items-center gap-15 flex-1 mt-10">
-                  <div className="w-[500px] h-[300px]">
+                <div className="videos max-w-[1200px] mx-auto px-4
+                                grid grid-cols-1 sm:grid-cols-2
+                                gap-6 mt-10">
+                  <div className={`group w-full aspect-video overflow-hidden rounded-lg relative transition-all duration-300 
+                  ${activeVideo && activeVideo!==1 ? "blur-sm scale-95 opacity-60" : ""} hover:scale-105 hover:shadow-[0_0_30px_rgba(255,0,0,0.6)]`}
+                  onMouseEnter={()=>setActiveVideo(1)}
+                  onMouseLeave={()=>setActiveVideo(null)}
+                  >
                     <iframe
-                      src="https://www.youtube.com/embed/_YLpaWRjx6c?autoplay=1&mute=1&vq=hd1080&rel=0&modestbranding=1"
+                      src="https://www.youtube.com/embed/_YLpaWRjx6c?vq=hd1080&rel=0&modestbranding=1&autoplay=1"
                       allowFullScreen
-                      width="100%"
-                      height="100%"
-                      title="Resident Evil Official Gameplay"
+                      className="w-full h-full rounded-lg"
+                      title="Resident Evil Official Gameplay - 1"
                       allow="autoplay"
                     ></iframe>
+                    <div className="proxy-div-for-<iframe> absolute inset-0 z-10"></div>
                   </div>
-                  <div className="w-[500px] h-[300px]">
+
+                  <div 
+                  onMouseEnter={()=>setActiveVideo(2)}
+                  onMouseLeave={()=>setActiveVideo(null)}
+                  className={`group w-full aspect-video overflow-hidden rounded-lg relative transition-all duration-300 
+                  ${activeVideo && activeVideo!==2 ? "blur-sm scale-95 opacity-60" : ""} hover:scale-105 hover:shadow-[0_0_30px_rgba(255,0,0,0.6)]`}
+                  >
                     <iframe
                       src="https://www.youtube.com/embed/H4j5H_g-qeU?autoplay=1&mute=1&vq=hd1080&loop=1&playlist=H4j5H_g-qeU&modestbranding=1&rel=0"
                       allowFullScreen
-                      width="100%"
-                      height="100%"
-                      title="Resident Evil Official Gameplay"
+                      className="w-full h-full rounded-lg"
+                      title="Resident Evil Official Gameplay - 2"
                       allow="autoplay"
                     ></iframe>
+                    <div className="proxy-div-for-<iframe> absolute inset-0 z-10"></div>
                   </div>
-                  <div className="w-[500px] h-[300px]">
+                  <div className={`group w-full aspect-video overflow-hidden rounded-lg relative transition-all duration-300 
+                  ${activeVideo && activeVideo!==3 ? "blur-sm scale-95 opacity-60" : ""} hover:scale-105 hover:shadow-[0_0_30px_rgba(255,0,0,0.6)]`}
+                  onMouseEnter={()=>setActiveVideo(3)}
+                  onMouseLeave={()=>setActiveVideo(null)}>
                     <iframe
-                      src="https://www.youtube.com/embed/aCQGltIEOm8?autoplay=1&mute=1&vq=hd1080&loop=1&playlist=aCQGltIEOm8&modestbranding=1&rel=0"
+                      src="https://www.youtube.com/embed/aCQGltIEOm8?vq=hd1080&loop=1&playlist=aCQGltIEOm8&modestbranding=1&rel=0&autoplay=1"
                       allowFullScreen
-                      width="100%"
-                      height="100%"
+                      className="w-full h-full rounded-lg"
                       title="Resident Evil Official Gameplay"
                       allow="autoplay"
                     ></iframe>
+                    <div className="proxy-div-for-<iframe> absolute inset-0 z-10"></div>
                   </div>
-                  <div className="w-[500px] h-[300px]">
+                  <div className={`group w-full aspect-video overflow-hidden rounded-lg relative transition-all duration-300 
+                  ${activeVideo && activeVideo!==4 ? "blur-sm scale-95 opacity-60" : ""} hover:scale-105 hover:shadow-[0_0_30px_rgba(255,0,0,0.6)]`}
+                  onMouseEnter={()=>setActiveVideo(4)}
+                  onMouseLeave={()=>setActiveVideo(null)}>
                     <iframe
-                      src="https://www.youtube.com/embed/k8aXqeQs9bE?autoplay=1&mute=1&vq=hd1080&loop=1&playlist=k8aXqeQs9bE&modestbranding=1&rel=0"
-                      width="100%"
-                      height="100%"
+                      src="https://www.youtube.com/embed/k8aXqeQs9bE?vq=hd1080&loop=1&playlist=k8aXqeQs9bE&modestbranding=1&rel=0&autoplay=1"
+                      className="w-full h-full rounded-lg"
                       title="Resident Evil Official Gameplay"
                       allow="autoplay"
                     ></iframe>
+                    <div className="proxy-div-for-<iframe> absolute inset-0 z-10"></div>
                   </div>
                 </div>
               </div>
